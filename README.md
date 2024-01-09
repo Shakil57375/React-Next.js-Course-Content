@@ -5,7 +5,7 @@
 <br />
  <p align="center">
     <img src="https://avatars.githubusercontent.com/u/73503432?v=4" alt="Logo" width="80" height="80" />
-    <h3 align="center "><a href="https://learnwithsumit.com/rnext/courses/rnext/introduction-to-react" target="_blank" >REACTIVE ACCELERATOR - MODULE 1 - LESSON 1</a></h3>
+    <h3 align="center "><a href="https://learnwithsumit.com/rnext/courses/rnext/your-first-component" target="_blank" >REACTIVE ACCELERATOR - MODULE 1 - LESSON 4</a></h3>
 </p>
 
 <!-- TABLE OF CONTENTS -->
@@ -22,7 +22,7 @@
 
 ## ![htmlIcon][htmlicon-shield] Get Project
 
-In this video, you observed the distinctions between a Vanilla JavaScript Project and a React Project. We highly recommend trying it out for yourself.
+In this video, we learned about React components, how they are utilized in creating React applications, and the rules to adhere to. We also demonstrated examples of a Gallery and Profile component. If you wish to give it a try, you can clone our repository and experiment with it on your own.
 
 <!-- HOW TO RUN -->
 
@@ -40,14 +40,20 @@ Please follow the below instructions to run this branch in your machine:
    ```sh
    cd rnext
    ```
-4. Checkout/switch to branch 1.1
+4. Checkout/switch to branch 1.4
    ```sh
-   git checkout 1.1
+   git checkout 1.4
    ```
-5. Just run the index.html file with Visual Studio Code [Live Server plugin](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer).
+5. Just run this command to install node dependencies
+   ```sh
+   npm i
+   ```
+6. Just run this command
+   ```sh
+   npm run dev
+   ```
 
-<br>
-
+<br/>
 <!-- CONTACT  -->
 
 ## ![contactIcon][contacticon-shield] Contact us
