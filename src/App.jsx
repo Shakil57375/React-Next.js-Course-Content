@@ -1,30 +1,11 @@
-import Avatar from "./components/Avatar";
-import Info from "./components/Info";
-import Profile from "./components/Profile";
+import PackingList from "./components/PackingList";
 
 export default function App() {
-  const myObj = {
-    name: "Shakil",
-    age: 21,
-    profession: "student",
-  };
-  const obj2 = {
-    name: "shafin",
-    age: 22,
-    profession: "worker",
-  };
-  const obj3 = {
-    name: "tuhin",
-    age: 13,
-    profession: "student",
-  };
-  return (
-    <div>
-      <div>
-        <Profile myObj={myObj} obj2={obj2} obj3={obj3}>
-          <Info myObj={myObj} />
-        </Profile>
-      </div>
-    </div>
-  );
+    return (
+        <div>
+            <div>
+                <PackingList />
+            </div>
+        </div>
+    );
 }
