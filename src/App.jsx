@@ -1,15 +1,11 @@
-import { Card, Profile as UserInfo } from "./components/Gallery"; // named import & custom import name
-// import Gallery from "./components/Gallery"; // default export.
-import GalleryComponent from "./components/Gallery"; // default export & custom name.
+import Test from "./components/Test";
 
 function App() {
-  return (
-    <div>
-      <GalleryComponent />
-      <UserInfo />
-      <Card />
-    </div>
-  );
+    return (
+        <div>
+            <Test />
+        </div>
+    );
 }
 
 export default App;

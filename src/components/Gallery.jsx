@@ -1,18 +1,19 @@
-export function Profile() { // named export
+export function Profile() {
+    // named export
     return (
         <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
     );
 }
 
-export function Card() { // named export
+export function Card() {
+    // named export
     return (
-        <div>
-            <p>This is my card I am writing on it</p>
-        </div>
+        <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
     );
 }
 
-export default function Gallery() { // default export
+export default function Gallery() {
+    // default export
     return (
         <section>
             <h1>Amazing scientists</h1>
