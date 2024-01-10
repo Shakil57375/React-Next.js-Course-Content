@@ -1,11 +1,10 @@
 import Avatar from "./Avatar";
-import Info from "./Info";
 
 export default function Profile(props) {
   return (
     <div>
+      {props.children}
       <Avatar {...props} />
-      <Info />
     </div>
   );
 }

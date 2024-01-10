@@ -1,4 +1,5 @@
 import Avatar from "./components/Avatar";
+import Info from "./components/Info";
 import Profile from "./components/Profile";
 
 export default function App() {
@@ -20,7 +21,9 @@ export default function App() {
   return (
     <div>
       <div>
-        <Profile myObj={myObj} obj2={obj2} obj3={obj3}></Profile>
+        <Profile myObj={myObj} obj2={obj2} obj3={obj3}>
+          <Info myObj={myObj} />
+        </Profile>
       </div>
     </div>
   );
