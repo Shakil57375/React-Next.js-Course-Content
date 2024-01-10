@@ -3,10 +3,11 @@ export function Profile() { // named export
         <img src="https://i.imgur.com/MK3eW3As.jpg" alt="Katherine Johnson" />
     );
 }
+
 export function Card() { // named export
     return (
-        <div className="card">
-            <h1>This is a card</h1>
+        <div>
+            <p>This is my card I am writing on it</p>
         </div>
     );
 }
