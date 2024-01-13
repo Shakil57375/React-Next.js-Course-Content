@@ -14,6 +14,7 @@ export default function Gallery() {
     }
 
     let sculpture = sculptureList[index];
+    console.log(sculpture)
     return (
         <>
             <button onClick={handleNextClick}>Next</button>
