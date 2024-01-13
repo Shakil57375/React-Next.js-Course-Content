@@ -1,30 +1,25 @@
-import Avatar from "./components/Avatar";
-import Info from "./components/Info";
-import Profile from "./components/Profile";
-
 export default function App() {
-  const myObj = {
-    name: "Shakil",
-    age: 21,
-    profession: "student",
-  };
-  const obj2 = {
-    name: "shafin",
-    age: 22,
-    profession: "worker",
-  };
-  const obj3 = {
-    name: "tuhin",
-    age: 13,
-    profession: "student",
-  };
-  return (
-    <div>
-      <div>
-        <Profile myObj={myObj} obj2={obj2} obj3={obj3}>
-          <Info myObj={myObj} />
-        </Profile>
-      </div>
-    </div>
-  );
+    return (
+        <Toolbar
+            onPlayMovie={() => alert("Playing!")}
+            onUploadImage={() => alert("Uploading!")}
+        />
+    );
+}
+
+function Toolbar({ onPlayMovie, onUploadImage }) {
+    return (
+        <div>
+            <Button onSmash={onPlayMovie}>Play Movie</Button>
+            <Button onSmash={onUploadImage}>Upload Image</Button>
+        </div>
+    );
+}
+
+function Button({ onSmash, children }) {
+    return (
+        <p>
+            <button onClick={onSmash}>{children}</button>
+        </p>
+    );
 }

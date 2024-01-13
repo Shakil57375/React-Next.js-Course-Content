@@ -1,11 +1,8 @@
-export default function Avatar(props) {
-    console.log(props)
-    const {obj3 : {name, age, profession}} = props
-    console.log(name, age, profession)
+export default function Avatar({ age }) {
     return (
         <div>
             <div>
-                <p>{name} is {age} old</p>
+                <h1>Profile</h1>
             </div>
         </div>
     );
