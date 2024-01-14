@@ -23,6 +23,11 @@ const Todos = ({ todos, handleDelete, onEdit }) => {
             className="input input-bordered input-info w-full max-w-xs"
             value={updatedTodo}
             placeholder="Edit your todo"
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.keyCode === 13) {
+                handleSave();
+              }
+            }}
             onChange={(e) => setUpdatedTodo(e.target.value)}
           />
           <button
