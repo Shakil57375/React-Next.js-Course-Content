@@ -2,7 +2,7 @@ import { useState } from "react";
 import Todos from "./Todos";
 
 const TodoList = () => {
-  const [newTodo, setNewTodo] = useState(" ");
+  const [newTodo, setNewTodo] = useState("");
   const [todos, setTodos] = useState([]);
   const handleAddingTodo = () => {
     if (newTodo.trim() !== "") {
