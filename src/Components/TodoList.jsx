@@ -5,8 +5,10 @@ const TodoList = () => {
   const [newTodo, setNewTodo] = useState(" ");
   const [todos, setTodos] = useState([]);
   const handleAddingTodo = () => {
-    setTodos([...todos, newTodo]);
-    setNewTodo(" ");
+    if (newTodo.trim() !== "") {
+      setTodos([...todos, newTodo]);
+      setNewTodo(" ");
+    }
   };
 
   const handleDelete = (index) => {
