@@ -9,24 +9,19 @@ export default function TaskList({ tasks }) {
             <tr>
               <th className="p-4 pb-8 text-sm font-semibold capitalize w-[48px]"></th>
               <th className="p-4 pb-8 text-sm font-semibold capitalize w-[300px]">
-                {" "}
-                Title{" "}
+                Title
               </th>
               <th className="p-4 pb-8 text-sm font-semibold capitalize w-full">
-                {" "}
-                Description{" "}
+                Description
               </th>
               <th className="p-4 pb-8 text-sm font-semibold capitalize md:w-[350px]">
-                {" "}
-                Tags{" "}
+                Tags
               </th>
               <th className="p-4 pb-8 text-sm font-semibold capitalize md:w-[100px]">
-                {" "}
-                Priority{" "}
+                Priority
               </th>
               <th className="p-4 pb-8 text-sm font-semibold capitalize md:w-[100px]">
-                {" "}
-                Options{" "}
+                Options
               </th>
             </tr>
           </thead>
@@ -36,7 +31,13 @@ export default function TaskList({ tasks }) {
                 key={task.id}
                 className="border-b border-[#2E3443] [&>td]:align-baseline [&>td]:px-4 [&>td]:py-2"
               >
-                <td>{task.isFavorite === true ? <FaStar className="text-yellow-600"/> : <FaStar className="text-gray-600"/> }</td>
+                <td>
+                  {task.isFavorite === true ? (
+                    <FaStar className="text-yellow-600" />
+                  ) : (
+                    <FaStar className="text-gray-600" />
+                  )}
+                </td>
                 <td>{task.title}</td>
                 <td>
                   <div>{task.description}</div>
