@@ -1,12 +1,9 @@
 import "./App.css";
-import Fillter from "./Components/Fillter";
-import List from "./Components/List";
 
 function App() {
   return (
     <>
-      {/* <List /> */}
-      <Fillter />
+      <h1>hlw</h1>
     </>
   );
 }
