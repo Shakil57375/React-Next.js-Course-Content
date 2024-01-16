@@ -15,7 +15,7 @@ export default function Fillter() {
       <ul>
         {artists.map((artist) => (
           <li key={artist.id}>
-            {artist.name}
+            {artist.name}{" "}
             <button
               onClick={() => {
                 setArtists(artists.filter((a) => a.id !== artist.id));
