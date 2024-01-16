@@ -7,10 +7,7 @@ import NestedObject from "./Components/NestedObject";
 function App() {
   return (
     <>
-      {/* <MovingDot /> */}
-      {/* <Form /> */}
-      {/* <NestedObject /> */}
-      <ComplexObject />
+     <h1>hlw</h1>
     </>
   );
 }
