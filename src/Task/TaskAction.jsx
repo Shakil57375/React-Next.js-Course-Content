@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function TaskAction({ onAddTask }) {
+export default function TaskAction({ onAddTask, onDeleteAll }) {
   return (
     <div>
       <div className="mb-14 items-center justify-between sm:flex">
@@ -12,7 +12,7 @@ export default function TaskAction({ onAddTask }) {
           >
             Add Task
           </button>
-          <button className="rounded-md bg-red-500 px-3.5 py-2.5 text-sm font-semibold">
+          <button className="rounded-md bg-red-500 px-3.5 py-2.5 text-sm font-semibold" onClick={onDeleteAll}>
             Delete All
           </button>
         </div>
