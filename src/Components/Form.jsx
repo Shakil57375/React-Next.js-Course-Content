@@ -11,10 +11,10 @@ export default function Form() {
     setStatus("sent");
   }
 
-  const isSending = status === "sending";
-  const isSent = status === "sent";
+  // const isSending = status === "sending";
+  // const isSent = status === "sent";
 
-  if (isSent) {
+  if (status === "sent") {
     return <h1>Thanks for feedback!</h1>;
   }
 
@@ -22,15 +22,15 @@ export default function Form() {
     <form onSubmit={handleSubmit}>
       <p>How was your stay at The Prancing Pony?</p>
       <textarea
-        disabled={isSending}
+        disabled={status === "sending"}
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
       <br />
-      <button disabled={isSending} type="submit">
+      <button disabled={status === "sending"} type="submit">
         Send
       </button>
-      {isSending && <p>Sending...</p>}
+      {status === "sending" && <p>Sending...</p>}
     </form>
   );
 }
