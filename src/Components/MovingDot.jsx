@@ -7,26 +7,27 @@ export default function MovingDot() {
   });
   return (
     <div
-      onPointerMove={(e) => {
-        setPosition({
-          x: e.clientX,
-          y: e.clientY,
-        });
-      }}
       style={{
         position: "relative",
         width: "100vw",
         height: "100vh",
       }}
+      onPointerMove={(e) => {
+        setPosition({
+          ...position,
+          x: e.clientX,
+          y: e.clientY,
+        });
+      }}
     >
       <div
-      className="border border-red-600 rounded-full"
         style={{
           position: "absolute",
+          backgroundColor: "red",
           borderRadius: "50%",
-          transform: `translate(${position.x}px, ${position.y}px)`,
-          left: -10,
-          top: -10,
+          transform: `translate(${position.x}px , ${position.y}px)`,
+          left: -40,
+          top: -110,
           width: 20,
           height: 20,
         }}
