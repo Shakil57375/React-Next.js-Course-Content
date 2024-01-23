@@ -1,45 +1,35 @@
 import { useState } from "react";
 
 export default function Form() {
-  const [text, setText] = useState("");
-  const [status, setStatus] = useState("typing");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("");
 
-  async function handleSubmit(e) {
-    e.preventDefault();
-    setStatus("sending");
-    await sendMessage(text);
-    setStatus("sent");
-  }
+    function handleFirstNameChange(e) {
+        setFirstName(e.target.value);
+    }
 
-  // const isSending = status === "sending";
-  // const isSent = status === "sent";
+    function handleLastNameChange(e) {
+        setLastName(e.target.value);
+    }
+    // derived state or calculated state
+    const fullName = firstName + " " + lastName;
 
-  if (status === "sent") {
-    return <h1>Thanks for feedback!</h1>;
-  }
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <p>How was your stay at The Prancing Pony?</p>
-      <textarea
-        disabled={status === "sending"}
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
-      <br />
-      <button disabled={status === "sending"} type="submit">
-        Send
-      </button>
-      {status === "sending" && <p>Sending...</p>}
-    </form>
-  );
-}
-
-// Pretend to send a message.
-function sendMessage(text) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve();
-    }, 3000);
-  });
+    return (
+        <>
+            <h2>Let’s check you in</h2>
+            <label>
+                First name:{" "}
+                <input value={firstName} onChange={handleFirstNameChange} />
+            </label>
+            <br />
+            <br />
+            <label>
+                Last name:{" "}
+                <input value={lastName} onChange={handleLastNameChange} />
+            </label>
+            <p>
+                Your ticket will be issued to: <b>{fullName}</b>
+            </p>
+        </>
+    );
 }
