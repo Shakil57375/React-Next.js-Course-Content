@@ -13,8 +13,7 @@ export default function Parent() {
   );
 }
 
-function Child(props) {
-  const { onIncrement } = props;
+function Child({ onIncrement }) {
   return (
     <div>
       <button onClick={onIncrement}>Increment</button>

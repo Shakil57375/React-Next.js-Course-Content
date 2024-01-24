@@ -22,9 +22,7 @@ const panelData = [
 
 export default function Accordion() {
   const [activeIndex, setActiveIndex] = useState(0);
-  console.log(activeIndex);
   const handlePanelClick = (index) => {
-    console.log(index);
     setActiveIndex(index);
   };
 
