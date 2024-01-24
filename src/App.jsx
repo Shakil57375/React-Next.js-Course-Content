@@ -1,11 +1,13 @@
-import TravelEditable from "./components/TravelEditable";
+import TravelPlan from "./components/TravelPlan";
+import TravelPlanNested from "./components/TravelPlanNested";
 
 function App() {
-    return (
-        <div>
-            <TravelEditable />
-        </div>
-    );
+  return (
+    <>
+      <TravelPlan />
+      {/* <TravelPlanNested /> */}
+    </>
+  );
 }
 
 export default App;
