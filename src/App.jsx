@@ -3,8 +3,9 @@ import AddTask from "./Components/AddTask";
 import { initialTasks } from "../src/data/tasks";
 import TaskList from "./Components/TaskList";
 import taskReducer from "./Reducer/taskReducer";
+import { useImmerReducer } from "use-immer";
 const App = () => {
-  const [tasks, dispatch] = useReducer(taskReducer, initialTasks);
+  const [tasks, dispatch] = useImmerReducer(taskReducer, initialTasks);
   const getNextId = (data) => {
     const maxId = data.reduce((prev, current) =>
       prev && prev.id > current.id ? prev.id : current.id
@@ -35,7 +36,7 @@ const handleDeleteTask = (taskId) => {
       id:  taskId,
   });
 };
-
+ 
   return (
     <div>
       <h1>Todo List</h1>
