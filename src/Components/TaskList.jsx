@@ -1,19 +1,14 @@
-import React from "react";
+import { useTasks } from "../contexts/TasksContext";
 import Task from "./Task";
 
-const TaskList = ({ tasks, onTaskChange, onDelete }) => {
-  return (
-    <div>
-      {tasks.map((task) => (
-        <Task
-          key={task.id}
-          task={task}
-          onDelete={onDelete}
-          onTaskChange={onTaskChange}
-        />
-      ))}
-    </div>
-  );
-};
+export default function TaskList() {
+    const tasks = useTasks();
 
-export default TaskList;
+    return (
+        <ul>
+            {tasks.map((task) => (
+                <Task key={task.id} task={task} />
+            ))}
+        </ul>
+    );
+}

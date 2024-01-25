@@ -1,21 +1,35 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { useTasks, useTasksDispatch } from "../contexts/TasksContext";
+import { getNextId } from "../utils/getNextId";
 
-const AddTask = ({ onAdd }) => {
-  const [text, setText] = useState("");
-  return (
-    <div>
-      <input
-        type="text"
-        placeholder="Type here"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        className="input input-bordered input-secondary w-full max-w-xs"
-      />
-      <button onClick={() => onAdd(text)} className="btn btn-accent">
-        Add Task
-      </button>
-    </div>
-  );
-};
+export default function AddTask() {
+    const [text, setText] = useState("");
+    const dispatch = useTasksDispatch();
+    const tasks = useTasks();
 
-export default AddTask;
+    const handleChangeText = (e) => {
+        setText(e.target.value);
+    };
+
+    return (
+        <>
+            <input
+                placeholder="Add task"
+                value={text}
+                onChange={handleChangeText}
+            />
+            <button
+                onClick={() => {
+                    setText("");
+                    dispatch({
+                        type: "added",
+                        text,
+                        id: getNextId(tasks),
+                    });
+                }}
+            >
+                Add
+            </button>
+        </>
+    );
+}
