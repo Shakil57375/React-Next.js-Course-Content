@@ -1,19 +1,17 @@
 import React from "react";
 import Task from "./Task";
 
-const TaskList = ({ tasks, onChangeTask, onDeleteTask }) => {
+const TaskList = ({ tasks, onTaskChange, onDelete }) => {
   return (
     <div>
-      <ul>
-        {tasks.map((task) => (
-          <Task
-            key={task.id}
-            task={task}
-            onChangeTask={onChangeTask}
-            onDeleteTask={onDeleteTask}
-          />
-        ))}
-      </ul>
+      {tasks.map((task) => (
+        <Task
+          key={task.id}
+          task={task}
+          onDelete={onDelete}
+          onTaskChange={onTaskChange}
+        />
+      ))}
     </div>
   );
 };

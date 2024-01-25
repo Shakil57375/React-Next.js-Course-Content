@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 
-const Task = ({ task, onChangeTask, onDeleteTask }) => {
+const Task = ({ task, onTaskChange, onDelete }) => {
   const [isEditing, setIsEditing] = useState(false);
-  let taskContent;
+  let textContent;
   if (isEditing) {
-    taskContent = (
+    textContent = (
       <>
         <input
           type="text"
           value={task.text}
-          onChange={(e) =>{
-            onChangeTask({
-                ...task,
-                text : e.target.value
+          onChange={(e) =>
+            onTaskChange({
+              ...task,
+              text: e.target.value,
             })
-          }}
-          className="input input-bordered input-accent w-full max-w-xs"
+          }
+          placeholder="Type here"
+          className="input input-bordered input-secondary w-full max-w-xs"
         />
         <button onClick={() => setIsEditing(false)} className="btn btn-accent">
           Save
@@ -23,7 +24,7 @@ const Task = ({ task, onChangeTask, onDeleteTask }) => {
       </>
     );
   } else {
-    taskContent = (
+    textContent = (
       <>
         {task.text}
         <button onClick={() => setIsEditing(true)} className="btn btn-accent">
@@ -34,45 +35,21 @@ const Task = ({ task, onChangeTask, onDeleteTask }) => {
   }
   return (
     <div>
-      <li className="menu">
-        <label className="flex gap-5 items-center">
-          <input
-            type="checkbox"
-            checked={task.done}
-            onChange={(e) => {
-              onChangeTask({
-                ...task,
-                done: e.target.checked,
-              });
-            }}
-            className="checkbox checkbox-accent"
-          />
-          {/* {isEditing ? (
-            <>
-              <input
-                type="text"
-                value={task.text}
-                className="input input-bordered input-accent w-full max-w-xs"
-              />
-            </>
-          ) : (
-            <>{task.text}</>
-          )}
-          <button
-            onClick={() => setIsEditing(!isEditing)}
-            className="btn btn-accent"
-          >
-            {isEditing ? "Save" : "Edit"}
-          </button> */}
-          {taskContent}
-          <button
-            onClick={() => onDeleteTask(task.id)}
-            className="btn btn-accent"
-          >
-            Delete
-          </button>
-        </label>
-      </li>
+      <input
+        type="checkbox"
+        checked={task.done}
+        onChange={(e) =>
+          onTaskChange({
+            ...task,
+            done: e.target.checked,
+          })
+        }
+        className="checkbox checkbox-accent"
+      />
+      {textContent}
+      <button onClick={() => onDelete(task.id)} className="btn btn-accent">
+        Delete
+      </button>
     </div>
   );
 };

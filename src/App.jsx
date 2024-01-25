@@ -1,21 +1,19 @@
+import React, { useState } from "react";
 import AddTask from "./Components/AddTask";
-import TaskList from "./Components/TaskList";
 import { initialTasks } from "../src/data/tasks";
-import { useState } from "react";
-function App() {
+import TaskList from "./Components/TaskList";
+const App = () => {
   const [tasks, setTasks] = useState(initialTasks);
-
   const getNextId = (data) => {
     const maxId = data.reduce((prev, current) =>
       prev && prev.id > current.id ? prev.id : current.id
     );
-    console.log(maxId);
+
     return maxId + 1;
   };
 
   // handlers
   const handleAddTask = (text) => {
-    console.log(text);
     setTasks([
       ...tasks,
       {
@@ -26,7 +24,7 @@ function App() {
     ]);
   };
 
-  const handleChangeTask = (task) => {
+  const handleChange = (task) => {
     const updatedTask = tasks.map((pTask) => {
       if (pTask.id === task.id) {
         return task;
@@ -37,21 +35,21 @@ function App() {
     setTasks(updatedTask);
   };
 
-  const handledeleteTask = (taskId) => {
-    setTasks(tasks.filter((task) => task.id !== taskId));
+  const handleDelete = (Taskid) => {
+    setTasks(tasks.filter((task) => task.id !== Taskid));
   };
 
   return (
-    <div className="flex flex-col justify-center items-center gap-5">
-      <p>Prague Itinerary</p>
+    <div>
+      <h1>Todo List</h1>
       <AddTask onAdd={handleAddTask} />
       <TaskList
         tasks={tasks}
-        onChangeTask={handleChangeTask}
-        onDeleteTask={handledeleteTask}
+        onTaskChange={handleChange}
+        onDelete={handleDelete}
       />
     </div>
   );
-}
+};
 
 export default App;

@@ -3,28 +3,16 @@ import React, { useState } from "react";
 const AddTask = ({ onAdd }) => {
   const [text, setText] = useState("");
   return (
-    <div className="flex gap-5">
+    <div>
       <input
         type="text"
-        placeholder="Add Task"
-        className="input input-bordered input-accent w-full max-w-xs"
+        placeholder="Type here"
         value={text}
-        onKeyDown={(e) => {
-          if (e.key === "Enter" || e.keyCode === 13) {
-            setText("");
-            onAdd(text);
-          }
-        }}
         onChange={(e) => setText(e.target.value)}
+        className="input input-bordered input-secondary w-full max-w-xs"
       />
-      <button
-        onClick={() => {
-          setText("");
-          onAdd(text);
-        }}
-        className="btn btn-accent"
-      >
-        Add
+      <button onClick={() => onAdd(text)} className="btn btn-accent">
+        Add Task
       </button>
     </div>
   );
