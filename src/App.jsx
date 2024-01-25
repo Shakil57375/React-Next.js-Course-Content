@@ -32,7 +32,7 @@ const handleChangeTask = (task) => {
 const handleDeleteTask = (taskId) => {
   dispatch({
       type: "deleted",
-      id: taskId,
+      id:  taskId,
   });
 };
 
