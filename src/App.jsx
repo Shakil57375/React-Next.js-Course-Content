@@ -1,13 +1,11 @@
-import AddTask from "./components/AddTask";
-import TaskList from "./components/TaskList";
-import TasksProvider from "./contexts/TasksContext";
+import React from 'react'
 
-export default function App() {
-    return (
-        <TasksProvider>
-            <h1>Prague itinerary</h1>
-            <AddTask />
-            <TaskList />
-        </TasksProvider>
-    );
+const App = () => {
+  return (
+    <div>
+      <h1 className='text-center text-red-500'>hlw</h1>
+    </div>
+  )
 }
+
+export default App
