@@ -58,7 +58,7 @@ const MovieCard = ({ movie }) => {
       <figure className="p-4 border border-black/10 shadow-sm dark:border-white/10 rounded-xl cursor-pointer">
         <a onClick={() => handleMovieSelection(movie)}>
           <img
-            className="w-full object-cover"
+            className="w-full  object-cover"
             src={getImgUrl(cover)}
             alt={title}
           />
